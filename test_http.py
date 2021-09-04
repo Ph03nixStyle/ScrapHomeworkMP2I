@@ -9,4 +9,6 @@ COOKIES = {
 }
 
 r=requests.get(URL, cookies=COOKIES)
-print(r.content)
+print(r.content.decode())
+with open("output.html","wt") as output:
+	output.write(r.content.decode())
